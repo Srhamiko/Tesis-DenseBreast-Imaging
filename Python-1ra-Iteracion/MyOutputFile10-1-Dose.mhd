@@ -1,0 +1,13 @@
+ObjectType = Image
+NDims = 3
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = False
+TransformMatrix = 1 0 0 0 1 0 0 0 1
+Offset = -6.9724399999999997 -6.9724399999999997 0
+CenterOfRotation = 0 0 0
+ElementSpacing = 0.055118110030889511 0.055118110030889511 1
+DimSize = 254 254 1
+AnatomicalOrientation = ???
+ElementType = MET_FLOAT
+ElementDataFile = MyOutputFile10-1-Dose.raw

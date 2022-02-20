@@ -1,0 +1,71 @@
+#phatom_pt1
+/gate/world/daughters/name Basic
+/gate/world/daughters/insert box
+/gate/Basic/placement/setTranslation 0.0 0.0 0.0 cm 
+/gate/Basic/setMaterial Vacuum
+/gate/Basic/geometry/setXLength 1. cm
+/gate/Basic/geometry/setYLength 1. cm
+/gate/Basic/geometry/setZLength 1. cm
+/gate/Basic/vis/forceWireframe
+/gate/Basic/vis/setColor white
+/gate/Basic/vis/setVisible 1
+
+#Cristales 0.54
+/gate/Basic/daughters/name Micro1
+/gate/Basic/daughters/insert sphere
+/gate/Micro1/setMaterial ALO
+/gate/Micro1/geometry/setRmax 0.54 mm
+/gate/Micro1/geometry/setRmin 0 mm
+/gate/Micro1/vis/forceSolid
+/gate/Micro1/vis/setColor blue
+/gate/Micro1/vis/setVisible 1
+/gate/Micro1/repeaters/insert linear
+/gate/Micro1/linear/setRepeatNumber  3
+/gate/Micro1/linear/setRepeatVector  2.5  0 0. mm
+/gate/Micro1/linear/autoCenter  false
+/gate/Micro1/placement/setTranslation -2.5 +2.25 0. mm
+
+#Cristales 0.32
+/gate/Basic/daughters/name Micro2
+/gate/Basic/daughters/insert sphere
+/gate/Micro2/setMaterial ALO
+/gate/Micro2/geometry/setRmax 0.32 mm
+/gate/Micro2/geometry/setRmin 0 mm
+/gate/Micro2/vis/forceSolid
+/gate/Micro2/vis/setColor blue
+/gate/Micro2/vis/setVisible 1
+/gate/Micro2/repeaters/insert linear
+/gate/Micro2/linear/setRepeatNumber  3
+/gate/Micro2/linear/setRepeatVector  2.5  0 0. mm
+/gate/Micro2/linear/autoCenter  false
+/gate/Micro2/placement/setTranslation -2.5 0.75 0. mm
+
+#Cristales 0.24
+/gate/Basic/daughters/name Micro3
+/gate/Basic/daughters/insert sphere
+/gate/Micro3/setMaterial ALO
+/gate/Micro3/geometry/setRmax 0.24 mm
+/gate/Micro3/geometry/setRmin 0 mm
+/gate/Micro3/vis/forceSolid
+/gate/Micro3/vis/setColor blue
+/gate/Micro3/vis/setVisible 1
+/gate/Micro3/repeaters/insert linear
+/gate/Micro3/linear/setRepeatNumber  3
+/gate/Micro3/linear/setRepeatVector  2.5  0 0. mm
+/gate/Micro3/linear/autoCenter  false
+/gate/Micro3/placement/setTranslation -2.5 -0.75 0. mm
+
+#Cristales 0.16
+/gate/Basic/daughters/name Micro4
+/gate/Basic/daughters/insert sphere
+/gate/Micro4/setMaterial ALO
+/gate/Micro4/geometry/setRmax 0.16 mm
+/gate/Micro4/geometry/setRmin 0 mm
+/gate/Micro4/vis/forceSolid
+/gate/Micro4/vis/setColor blue
+/gate/Micro4/vis/setVisible 1
+/gate/Micro4/repeaters/insert linear
+/gate/Micro4/linear/setRepeatNumber  3
+/gate/Micro4/linear/setRepeatVector  2.5  0 0. mm
+/gate/Micro4/linear/autoCenter  false
+/gate/Micro4/placement/setTranslation -2.5 -2.25 0. mm

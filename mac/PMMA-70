@@ -1,0 +1,10 @@
+/gate/world/daughters/name Phantom
+/gate/world/daughters/insert box
+/gate/Phantom/placement/setTranslation 0.0 0.0 0.0 cm 
+/gate/Phantom/setMaterial PMMA
+/gate/Phantomgeometry/setXLength 2. cm
+/gate/Phantom/geometry/setYLength 2. cm
+/gate/Phantom/geometry/setZLength 3.38163 cm
+/gate/Phantom/vis/forceWireframe
+/gate/Phantom/vis/setColor red
+/gate/Phantom/vis/setVisible 1 
