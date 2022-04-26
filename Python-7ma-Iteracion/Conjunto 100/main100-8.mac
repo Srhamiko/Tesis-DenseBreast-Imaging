@@ -1,0 +1,150 @@
+/gate/geometry/setMaterialDatabase ../data/GateMaterials.db 
+
+/gate/world/geometry/setXLength 2. m 
+/gate/world/geometry/setYLength 2. m 
+/gate/world/geometry/setZLength 2. m 
+/gate/world/setMaterial Air 
+/gate/world/vis/setVisible 0  
+
+/gate/world/daughters/name CTscanner 
+/gate/world/daughters/insert box 
+/gate/CTscanner/setMaterial CdTe
+/gate/CTscanner/geometry/setXLength 14 mm 
+/gate/CTscanner/geometry/setYLength 14 mm 
+/gate/CTscanner/geometry/setZLength 1 mm 
+/gate/CTscanner/vis/forceSolid 
+/gate/CTscanner/vis/setColor yellow 
+/gate/CTscanner/placement/setTranslation 0. 0. 7. cm 
+//gate/world/daughters/name Phantom
+/gate/world/daughters/insert box
+/gate/Phantom/placement/setTranslation 0.0 0.0 0. cm 
+/gate/Phantom/setMaterial PMMA
+/gate/Phantom/geometry/setXLength 2. cm
+/gate/Phantom/geometry/setYLength 2. cm
+/gate/Phantom/geometry/setZLength 2.76 cm
+/gate/Phantom/vis/forceWireframe
+/gate/Phantom/vis/setColor red
+/gate/Phantom/vis/setVisible 1 
+
+
+#Cristales 0.54
+/gate/Phantom/daughters/name Micro1
+/gate/Phantom/daughters/insert sphere
+/gate/Micro1/setMaterial ALO
+/gate/Micro1/geometry/setRmax 0.54 mm
+/gate/Micro1/geometry/setRmin 0 mm
+/gate/Micro1/vis/forceSolid
+/gate/Micro1/vis/setColor blue
+/gate/Micro1/vis/setVisible 1
+/gate/Micro1/repeaters/insert linear
+/gate/Micro1/linear/setRepeatNumber  3
+/gate/Micro1/linear/setRepeatVector  2.5  0 0. mm
+/gate/Micro1/linear/autoCenter  false
+/gate/Micro1/placement/setTranslation -2.5 +3. 0. mm
+
+#Cristales 0.40
+/gate/Phantom/daughters/name Micro5
+/gate/Phantom/daughters/insert sphere
+/gate/Micro5/setMaterial ALO
+/gate/Micro5/geometry/setRmax 0.40 mm
+/gate/Micro5/geometry/setRmin 0 mm
+/gate/Micro5/vis/forceSolid
+/gate/Micro5/vis/setColor blue
+/gate/Micro5/vis/setVisible 1
+/gate/Micro5/repeaters/insert linear
+/gate/Micro5/linear/setRepeatNumber  3
+/gate/Micro5/linear/setRepeatVector  2.5  0 0. mm
+/gate/Micro5/linear/autoCenter  false
+/gate/Micro5/placement/setTranslation -2.5 +1.5 0. mm
+
+#Cristales 0.32
+/gate/Phantom/daughters/name Micro2
+/gate/Phantom/daughters/insert sphere
+/gate/Micro2/setMaterial ALO
+/gate/Micro2/geometry/setRmax 0.32 mm
+/gate/Micro2/geometry/setRmin 0 mm
+/gate/Micro2/vis/forceSolid
+/gate/Micro2/vis/setColor blue
+/gate/Micro2/vis/setVisible 1
+/gate/Micro2/repeaters/insert linear
+/gate/Micro2/linear/setRepeatNumber  3
+/gate/Micro2/linear/setRepeatVector  2.5  0 0. mm
+/gate/Micro2/linear/autoCenter  false
+/gate/Micro2/placement/setTranslation -2.5 0. 0. mm
+
+#Cristales 0.24
+/gate/Phantom/daughters/name Micro3
+/gate/Phantom/daughters/insert sphere
+/gate/Micro3/setMaterial ALO
+/gate/Micro3/geometry/setRmax 0.24 mm
+/gate/Micro3/geometry/setRmin 0 mm
+/gate/Micro3/vis/forceSolid
+/gate/Micro3/vis/setColor blue
+/gate/Micro3/vis/setVisible 1
+/gate/Micro3/repeaters/insert linear
+/gate/Micro3/linear/setRepeatNumber  3
+/gate/Micro3/linear/setRepeatVector  2.5  0 0. mm
+/gate/Micro3/linear/autoCenter  false
+/gate/Micro3/placement/setTranslation -2.5 -1.5 0. mm
+
+#Cristales 0.16
+/gate/Phantom/daughters/name Micro4
+/gate/Phantom/daughters/insert sphere
+/gate/Micro4/setMaterial ALO
+/gate/Micro4/geometry/setRmax 0.16 mm
+/gate/Micro4/geometry/setRmin 0 mm
+/gate/Micro4/vis/forceSolid
+/gate/Micro4/vis/setColor blue
+/gate/Micro4/vis/setVisible 1
+/gate/Micro4/repeaters/insert linear
+/gate/Micro4/linear/setRepeatNumber  3
+/gate/Micro4/linear/setRepeatVector  2.5  0 0. mm
+/gate/Micro4/linear/autoCenter  false
+/gate/Micro4/placement/setTranslation -2.5 -3. 0. mm 
+
+ 
+/gate/physics/addPhysicsList emstandard_opt4 
+
+
+/gate/actor/addActor DoseActor     MyActor 
+
+/gate/actor/MyActor/save                        MyOutputFile100-8.mhd 
+
+/gate/actor/MyActor/attachTo                    CTscanner 
+/gate/actor/MyActor/setResolution               255 255 1 
+/gate/actor/MyActor/stepHitType                 post 
+
+
+/control/verbose 0 
+/run/verbose 0 
+/run/particle/verbose 0 
+/event/verbose 0 
+/tracking/verbose 0 
+/tracking/verbose 0 
+/gate/generator/verbose 0 
+/gate/source/verbose 0 
+/run/particle/verbose 0 
+
+/gate/run/initialize
+/gate/random/setEngineName MersenneTwister
+/gate/random/setEngineSeed auto
+
+/gate/source/addSource electron_beam gps
+/gate/source/electron_beam/gps/particle gamma 
+/gate/source/electron_beam/gps/ene/type Mono
+
+
+/gate/source/electron_beam/gps/ene/mono 0.035000 MeV 
+/gate/source/electron_beam/gps/pos/centre 0 0 -63 cm 
+/gate/source/electron_beam/gps/ang/type iso 
+/gate/source/electron_beam/gps/ang/mintheta 0. deg 
+/gate/source/electron_beam/gps/ang/maxtheta 0. deg 
+/gate/source/electron_beam/gps/ang/minphi 89. deg 
+/gate/source/electron_beam/gps/ang/maxphi 90. deg 
+/gate/source/electron_beam/gps/pos/type Plane
+/gate/source/electron_beam/gps/pos/shape Circle
+/gate/source/electron_beam/gps/pos/radius 0.707 cm
+
+/gate/application/setTotalNumberOfPrimaries 2e9 
+/gate/application/start 
+
